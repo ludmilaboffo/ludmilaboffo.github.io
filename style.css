@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #03a9f4;
+}
+
+body{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: #1f2028;
+}
+.color-fondo{
+    position: absolute;
+    display:block;
+    margin-bottom: 20px;
+    background-color: rgb(56,132,252);
+}
+
+section{
+    position: relative;
+    width:100%;
+}
+section .olas{
+    position: relative;
+    margin-bottom: 5px;
+}
+
+section .olas .ola{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: url(images/wave.png);
+    background-size: 1000px 100px;
+}
+
+section .olas .ola#ola1{
+    opacity: 1;
+    bottom: 0;
+    z-index: 1000;
+    animation: animate 4s linear infinite;
+}
+
+section .olas .ola#ola2{
+    opacity: 0.5;
+    bottom: 10px;
+    z-index: 999;
+    animation: animate2 2s linear infinite;
+}
+section .olas .ola#ola3{
+    opacity: 0.2;
+    bottom: 15px;
+    z-index: 998;
+    animation: animate 4s linear infinite;
+}
+
+section .olas .ola#ola4{
+    opacity: 0.7;
+    bottom: 20px;
+    z-index: 999;
+    animation: animate2 2s linear infinite;
+}
+
+.cielo{
+    position: absolute;
+    bottom:0;
+    height: 100vh;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+h2{
+    position: absolute;
+    bottom:60vh;
+    transform: translateY(50%);
+    width: 100%;
+    text-align: center;
+    font-size: 8em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+h2:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 2px #03a9f4;
+
+}
+h2:nth-child(3){
+    color: #03a9f4;
+    animation: animateOndas 4s ease-in-out infinite;
+}
+h2:nth-child(2){
+    color: #d4dee6;
+    animation: animateOndas2 2s ease-in-out infinite;
+}
+
+.barco{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-20%);
+    width:800px;
+    bottom: 0;
+    pointer-events: none;
+}
+
+@keyframes animate{
+    0%{
+        background-position-x: 1000px;
+    }
+    100%{
+        background-position-x: 0px;
+    }
+
+}
+
+@keyframes animate2{
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+
+}
+
+@keyframes animateOndas{
+    0%, 100% {
+        clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+    }
+    25% {
+        clip-path: polygon(0% 45%, 15% 40%, 32% 30%, 54% 20%, 70% 25%, 84% 20%, 100% 30%, 100% 100%, 0% 100%);
+    }
+    50% {
+        clip-path: polygon(0% 45%, 15% 50%, 32% 60%, 54% 70%, 70% 65%, 84% 70%, 100% 60%, 100% 100%, 0% 100%);
+    }
+}
+@keyframes animateOndas2{
+    0%, 100% {
+        clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+    }
+    50% {
+        clip-path: polygon(0% 45%, 15% 50%, 32% 60%, 54% 70%, 70% 65%, 84% 70%, 100% 60%, 100% 100%, 0% 100%);
+    }
+}
