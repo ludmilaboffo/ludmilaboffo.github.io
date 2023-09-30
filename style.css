@@ -22,6 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     min-height: 100vh;
     background: rgb(56,132,252);
 }
@@ -46,7 +47,17 @@
     z-index: calc(-1 * var(--i));
     transition: 0.5s;
 }
+.contenido p{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
 
+}
+.contenido h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .contenedor .card:nth-child(1){
     opacity: 1;
 }
@@ -81,6 +92,10 @@
     transform:translateY(0px);
 }
 
+.contenedor-iconos{
+    margin-bottom: 10px;
+    display: block;
+}
 
 section{
     position: relative;
@@ -178,18 +193,48 @@ h2:nth-child(2){
 }
 h1{
     text-align: center;
-    font-size: 4em;
+    font-size: 3em;
     font-weight: 800;
     text-transform: uppercase;
-    color: #d4dee6;
+    color: #fbfdff;
     margin-top: 20%;
-}
-h1:hover{
-    cursor: pointer;
-    transform: translateX(10px); /* Cambia la posición horizontal en 10 píxeles cuando se realiza hover */
-    transition: transform 0.3s ease;
+    line-height: 1em;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    animation: animateText 5s linear infinite;                 
 }
 
+.contenedor-submarino{
+    width: 100%; /* Asegura que la imagen cubra todo el ancho de la ventana */
+    height: 100vh; 
+    background-color: rgb(56,132,252);
+}
+.submarino{
+    width: 30%;
+    animation: moveSubmarine 10s ease-in-out infinite;
+}
+/**h1:hover{
+    cursor: pointer;
+    transform: translateX(10px);  Cambia la posición horizontal en 10 píxeles cuando se realiza hover 
+}**/
+
+@keyframes animateText{
+    0%{
+        transform: rotate(5deg);
+    }
+
+    25%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-5deg);
+    }
+    75%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(5deg);
+    }
+}
 
 @keyframes animate{
     0%{
@@ -228,5 +273,15 @@ h1:hover{
     }
     50% {
         clip-path: polygon(0% 45%, 15% 50%, 32% 60%, 54% 70%, 70% 65%, 84% 70%, 100% 60%, 100% 100%, 0% 100%);
+    }
+}
+
+
+@keyframes moveSubmarine {
+    0% {
+        transform: translateX(-100%); /* Empieza fuera de la ventana a la izquierda */
+    }
+    100% {
+        transform: translateX(100vw); /* Termina fuera de la ventana a la derecha */
     }
 }
