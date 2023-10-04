@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -9,10 +9,10 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Evita la barra de desplazamiento horizontal */
+    overflow-x: hidden; 
 }
 
-.principal {
+.principal, .nombre {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
@@ -21,7 +21,7 @@ body {
     background: #1f2028;
     margin: 0;
     padding: 0;
-    position: relative; /* Añade posición relativa al contenedor principal */
+    position: relative; 
 }
 
 .tarjetas{
@@ -32,6 +32,8 @@ body {
     min-height: 100vh;
     background: rgb(56,132,252);
 }
+
+
 .contenedor{
     position: relative;
     width: 1100px;
@@ -57,6 +59,7 @@ body {
     font-size: 12px;
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 
 }
 .contenido h3{
@@ -92,6 +95,7 @@ body {
     padding: 25px;
     text-align: center;
 }
+
 
 .contenedor:hover .card .contenido{
     opacity: 1;
@@ -148,6 +152,7 @@ section .olas .ola#ola4{
     animation: animate2 2s linear infinite;
 }
 
+
 .cielo {
     position: absolute;
     bottom: 0;
@@ -181,6 +186,19 @@ h2:nth-child(2){
     animation: animateOndas2 2s ease-in-out infinite;
 }
 
+h2:nth-child(4){
+    padding-top: 300px;
+    color: #f3843d;
+    font-family: 'Licorice', cursive;
+    text-transform: capitalize;
+    font-size: 7rem;
+}
+h2:nth-child(5){
+    padding-top: 450px;
+    color: #d4dee6;
+    font-size: 1.5rem;
+    animation: parpadeo 5s infinite;
+}
 .barco{
     position: absolute;
     left: 50%;
@@ -190,12 +208,36 @@ h2:nth-child(2){
     pointer-events: none;
 }
 
-.proyectos, .tec{
+.proyectos, .tec, footer, .pez, .boton{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color:  rgb(56,132,252);
+}
 
+#div-Eng{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgb(56,132,252);
+}
+#div-Eng p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0 30px;
+    padding-top: 80px;
+    color: #fff;
+    font-size: 1em;
+}
+
+.iconos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    background-color:  rgb(56,132,252);
+    padding-bottom: 10px;
 }
 
 h1{
@@ -206,12 +248,11 @@ h1{
     color: #fbfdff;
     margin-top: 20%;
     line-height: 1em;
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     animation: animateText 5s linear infinite;                 
 }
 
 .contenedor-submarino{
-    width: 100%; /* Asegura que la imagen cubra todo el ancho de la ventana */
+    width: 100%; 
     height: auto; 
     background-color: rgb(56,132,252);
 }
@@ -219,10 +260,7 @@ h1{
     width: 30%;
     animation: moveSubmarine 10s ease-in-out infinite;
 }
-/**h1:hover{
-    cursor: pointer;
-    transform: translateX(10px);  Cambia la posición horizontal en 10 píxeles cuando se realiza hover 
-}**/
+
 
 .contenedor-skills {
     text-align: center;
@@ -243,6 +281,25 @@ h1{
     animation: animateText 5s linear infinite; 
 }
 
+
+.boton{
+     padding-top: 40px;
+}
+.boton button{
+    margin-right: 20px;
+    border: none;
+    color:#0a0b0f;
+    padding: 10px 20px;
+    border-radius: 50px; 
+    font-size: 18px;
+    cursor: pointer;
+    transition:ease-in 0.3s ease, transform 0.3s ease; 
+}
+.boton button:hover{
+    background-color: #006dd3;
+    color:#fff;
+    transform: scale(1.1);
+}
 
 .ondeado{
     position: relative;
@@ -268,6 +325,86 @@ h1{
     padding-top: 80px;
     color: #fff;
     font-size: 1em;
+}
+.contenedor-iconito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+}
+
+.contenedor-iconito i {
+    color: #fff;
+    font-size: 4rem;
+    margin-right: 25px;
+    transform: translateY(0); 
+}
+.icon2{    
+    animation: iconoflotauno 2s infinite ease-in-out; 
+}
+.icon1, .icon3{
+    animation: iconoflotados 2s infinite ease-in-out; 
+}
+
+.icon1:hover, .icon2:hover, .icon3:hover {
+    color:#006dd3;
+}
+
+.pez{
+    padding: 100px;
+    transform: translateY(0); 
+}
+.pez-nada{
+    animation: pezflotados 2s infinite ease-in-out; 
+}
+
+@keyframes parpadeo {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 1); 
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes pezflotados {
+    0% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-50px); 
+    }
+    100% {
+        transform: translateY(0); 
+    }
+}
+
+
+@keyframes iconoflotados {
+    0% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-5px); 
+    }
+    100% {
+        transform: translateY(0); 
+    }
+}
+
+@keyframes iconoflotauno {
+    0% {
+        transform: translateY(-5px); 
+    }
+    50% {
+        transform: translateY(0); 
+    }
+    100% {
+        transform: translateY(-5px); 
+    }
 }
 
 @keyframes animateonda {
@@ -344,9 +481,9 @@ h1{
 
 @keyframes moveSubmarine {
     0% {
-        transform: translateX(-100%); /* Empieza fuera de la ventana a la izquierda */
+        transform: translateX(-100%); 
     }
     100% {
-        transform: translateX(100vw); /* Termina fuera de la ventana a la derecha */
+        transform: translateX(100vw); 
     }
 }
